@@ -96,20 +96,25 @@
     <div id="cars2"style="opacity: 0;transition: all 300ms;" class="image-cars">
         <img src="IMG\cars2.png" alt="cars2">
     </div>
-    <script>
+   <script>
         function mostrarMensaje() {
             document.getElementById("mensaje").classList.remove("hidden");
             lanzarCorazones();
+            document.getElementById("Cars").style.opacity = 0
+            document.getElementById("CARS2").style.opacity = 0
         }
         function mostrarOtroMensaje() {
             document.getElementById("otroMensaje").classList.remove("hidden");
             lanzarCorazones();
+            document.getElementById("Cars").style.opacity = 0
+            document.getElementById("CARS2").style.opacity = 0
         }
         function cambiarFondo() {
             document.body.style.background = "linear-gradient(to right, #6ca571, #7dbdc9)";
-            document.getElementById("Cars").style.opacity=1
-            document.getElementById("cars2").style.opacity=1
-
+            document.getElementById("Cars").style.opacity = 1
+            document.getElementById("CARS2").style.opacity = 1
+            document.getElementById("mensaje").classList.add("hidden");
+            document.getElementById("otroMensaje").classList.add("hidden");
         }
         function lanzarCorazones() {
             const container = document.getElementById("hearts-container");
@@ -122,6 +127,8 @@
                 heart.style.animationDuration = (Math.random() * 2 + 1) + "s";
                 container.appendChild(heart);
                 setTimeout(() => heart.remove(), 3000);
+                document.getElementById("Cars").style.opacity = 0
+                document.getElementById("CARS2").style.opacity = 0
             }
         }
     </script>
